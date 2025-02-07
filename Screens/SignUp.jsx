@@ -63,15 +63,15 @@ export const SignUp = () => {
       }
     } catch (err) {
       set_btn_loading(false);
-      console.log(err.response.data);
-      if (err.response.data.message) {
-        const {message, success} = err.response.data;
-        if (message.includes('duplicate')) {
-          if (message.includes('username:')) {
+      console.log(err?.response?.data);
+      if (err?.response?.data?.message) {
+        const {message, success} = err?.response?.data;
+        if (message?.includes('duplicate')) {
+          if (message?.includes('username:')) {
             setErrorMsg({username: 'Username already exists!'});
-          } else if (message.includes('email:')) {
+          } else if (message?.includes('email:')) {
             setErrorMsg({email: 'email already exists!'});
-          } else if (message.includes('phone_number:')) {
+          } else if (message?.includes('phone_number:')) {
             setErrorMsg({phone_number: 'Phone Number already exists!'});
           }
         } else {

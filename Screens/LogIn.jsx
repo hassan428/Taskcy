@@ -75,13 +75,13 @@ export const LogIn = () => {
     } catch (err) {
       set_loading(false);
       set_btn_loading(false);
-      const {message, success} = err.response.data;
-      if (message.includes('password')) {
+      const {message, success} = err?.response?.data;
+      if (message?.includes('password')) {
         setErrorMsg({password: message});
       } else {
         setErrorMsg({other: message});
       }
-      console.log('err.response', err.response);
+      console.log('err.response', err?.response);
     }
   };
 
@@ -106,7 +106,7 @@ export const LogIn = () => {
         loadingOffHandle();
       } catch (err) {
         set_loading(false);
-        const {message, success} = err.response.data;
+        const {message, success} = err?.response?.data;
         setErrorMsg({other: message});
       }
     }
