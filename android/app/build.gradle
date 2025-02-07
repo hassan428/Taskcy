@@ -89,7 +89,7 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
-         release {
+        release {
             def properties = new Properties()
             def propertiesFile = rootProject.file("gradle.properties")
             if (propertiesFile.exists()) {
